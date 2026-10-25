@@ -9,7 +9,7 @@ The application also supports Azure Container Apps Consumption with Blob, Table 
 
 ### Azure architecture
 
-![ImageChat Azure serverless architecture](docs/azure-architecture.svg)
+(https://raw.githubusercontent.com/gluconate/imageChat/1fbb899638323d784abe1cab29d0918281f43b4d/docs/azure-architecture.svg)
 
 The public HTTPS endpoint is an Azure Container App in a Consumption managed environment. It records application state in Table Storage, stores private images, work artifacts, and shared data-protection keys in Blob Storage, and submits opaque generation notifications to Queue Storage. An event-triggered Container Apps job consumes those notifications and performs model work; a scheduled job runs every five minutes to recover undelivered notifications and reconcile expired work.
 
