@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "ImageChat: Reset administrator password",
+      "type": "shell",
+      "command": "sh",
+      "args": ["scripts/dev.sh", "reset-admin-password"],
+      "windows": { "command": "powershell", "args": ["-NoProfile", "-File", "scripts/dev.ps1", "reset-admin-password"] },
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "ImageChat: Create administrator",
+      "type": "shell",
+      "command": "sh",
+      "args": ["scripts/dev.sh", "create-admin"],
+      "windows": { "command": "powershell", "args": ["-NoProfile", "-File", "scripts/dev.ps1", "create-admin"] },
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "ImageChat: Run locally",
+      "type": "shell",
+      "command": "sh",
+      "args": ["scripts/dev.sh", "run"],
+      "windows": { "command": "powershell", "args": ["-NoProfile", "-File", "scripts/dev.ps1", "run"] },
+      "options": { "cwd": "${workspaceFolder}" },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "ImageChat: Tests",
+      "type": "shell",
+      "command": "sh",
+      "args": ["scripts/dev.sh", "test"],
+      "windows": { "command": "powershell", "args": ["-NoProfile", "-File", "scripts/dev.ps1", "test"] },
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "test",
+      "problemMatcher": "$msCompile"
+    }
+  ]
+}
