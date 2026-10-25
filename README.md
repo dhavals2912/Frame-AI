@@ -1,4 +1,5 @@
-# Frame / ImageChat
+# FrameAI
+Frame is an AI-native creation framework where natural language becomes production-ready outcomes. Generate images, web apps, and Android apps, refine them through iterative prompts, and instantly build, deploy, and host solutions from a single platform.
 
 A local image-creation studio for **GPT-image-2, MAI-Image-2.5-Flash and FLUX.2-pro deployments in Microsoft Foundry**. A single ASP.NET Core application serves the website and a server-side API. No Node.js, frontend build, CDN, separate database server, or extra text-chat model is required.
 
