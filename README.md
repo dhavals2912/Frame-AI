@@ -5,11 +5,11 @@ A local image-creation studio for **GPT-image-2, MAI-Image-2.5-Flash and FLUX.2-
 
 ## Azure serverless deployment
 
+<img width="1400" height="940" alt="image" src="https://github.com/user-attachments/assets/ead9627a-40e7-4028-bfa6-674aacea93bb" />
+
 The application also supports Azure Container Apps Consumption with Blob, Table and Queue Storage. See [deployment and administrator setup](infra/README.md) for the deployed environment, scale-to-zero behavior, costs and operations. The local SQLite instructions below still apply to local mode; the serverless deployment does not use a mounted SQLite database.
 
 ### Azure architecture
-
-(https://raw.githubusercontent.com/gluconate/imageChat/1fbb899638323d784abe1cab29d0918281f43b4d/docs/azure-architecture.svg)
 
 The public HTTPS endpoint is an Azure Container App in a Consumption managed environment. It records application state in Table Storage, stores private images, work artifacts, and shared data-protection keys in Blob Storage, and submits opaque generation notifications to Queue Storage. An event-triggered Container Apps job consumes those notifications and performs model work; a scheduled job runs every five minutes to recover undelivered notifications and reconcile expired work.
 
